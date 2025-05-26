@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FitnessTracker.Domain.Common.Entities
+namespace FitnessTracker.Domain.Enums
 {
-    public abstract class BaseEntity
+    public enum EnumPartnershipStatus
     {
-        public Guid Id { get; set; }
+        Enduring,
+        Severed
     }
 }

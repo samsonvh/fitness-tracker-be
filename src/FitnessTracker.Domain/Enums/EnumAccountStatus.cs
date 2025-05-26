@@ -8,10 +8,7 @@ namespace FitnessTracker.Domain.Enums
 {
     public enum EnumAccountStatus
     {
-        Pending = -1,
         Inactive,
         Active,
-        Suspended,
-        Deleted
     }
 }

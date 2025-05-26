@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FitnessTracker.Domain.Enums
+namespace FitnessTracker.Domain.Entities
 {
-    public enum EnumWeightUnitOfMeasurement
+    public enum EnumPublicity
     {
-        None,
-        Pounds,
-        Kilograms,
+        Private,
+        Public
     }
 }

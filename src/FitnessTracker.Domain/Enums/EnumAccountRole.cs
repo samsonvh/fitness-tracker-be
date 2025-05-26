@@ -9,7 +9,7 @@ namespace FitnessTracker.Domain.Enums
     public enum EnumAccountRole
     {
         Admin,
-        User,
+        Client,
         Trainer
     }
 }

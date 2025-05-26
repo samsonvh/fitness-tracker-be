@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Domain.Enums
 {
-    public enum EnumDistanceUnitOfMeasurement
+    public enum EnumWeightGoalStatus
     {
-        None = 0,
-        Meters = 1,
-        Kilometers = 2,
-        Miles = 3,
+        InProgress = 0,
+        Achieved = 1,
+        Failed = 2
     }
 }

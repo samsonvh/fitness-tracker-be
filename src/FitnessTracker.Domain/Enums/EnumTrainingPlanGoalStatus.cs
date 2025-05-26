@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Domain.Enums
 {
-    public enum EnumWorkoutSessionStatus
+    public enum EnumTrainingPlanGoalStatus
     {
-        NotStarted = 0,
-        InProgress = 1,
-        Completed = 2,
-        Cancelled = 3
+        Uncompleted,
+        Completed,
+        Failed
     }
 }

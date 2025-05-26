@@ -1,5 +1,4 @@
-﻿using FitnessTracker.Domain.Common.Entities;
-using FitnessTracker.Domain.Enums;
+﻿using FitnessTracker.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +7,26 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Domain.Entities
 {
-    public class Account : AuditableEntity
+    public class Account
     {
+        public Guid Id { get; set; }
         public string Username { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public EnumAccountRole Role { get; set; }
         public EnumAccountStatus Status { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-        public virtual List<WorkoutPlan> CreatedWorkoutPlans { get; set; } = new List<WorkoutPlan>();
-        public virtual List<WorkoutPlan> AssignedWorkoutPlans { get; set; } = new List<WorkoutPlan>();
-        public virtual List<BodyWeightLog> CreatedBodyWeightLogs { get; set; } = new List<BodyWeightLog>();
-        public virtual List<BodyWeightLog> UpdatedBodyWeightLogs { get; set; } = new List<BodyWeightLog>();
-        public virtual List<BodyHeightLog> CreatedBodyHeightLogs { get; set; } = new List<BodyHeightLog>();
-        public virtual List<BodyHeightLog> UpdatedBodyHeightLogs { get; set; } = new List<BodyHeightLog>();
-        public virtual List<WorkoutExercise> CreatedWorkoutExercises { get; set; } = new List<WorkoutExercise>();
+        public PersonalProfile? PersonalProfile { get; set; }
+
+        public ICollection<Partnership> PartnershipsAsTrainer { get; set; } = new List<Partnership>();
+        public ICollection<Partnership> PartnershipsAsClient { get; set; } = new List<Partnership>();
+        public ICollection<TrainingPlan> CreatedTrainingPlans { get; set; } = new List<TrainingPlan>();
+        public ICollection<TrainingPlan> AssignedTrainingPlans { get; set; } = new List<TrainingPlan>();
+        public ICollection<TrainingExercise> CreatedTrainingExercises { get; set; } = new List<TrainingExercise>();
+        public ICollection<TrainingSession> CreatedTrainingSessions { get; set; } = new List<TrainingSession>();
+        public ICollection<TrainingSessionLog> CreatedTrainingSessionLogs { get; set; } = new List<TrainingSessionLog>();
+        public ICollection<WeightLog> CreatedWeightLogs { get; set; } = new List<WeightLog>();
+        public ICollection<WeightGoal> WeightGoals { get; set; } = new List<WeightGoal>();
     }
 }
