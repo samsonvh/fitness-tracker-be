@@ -55,8 +55,6 @@ namespace FitnessTracker.Application.Client.Commands.RegisterByEmail
             };
 
             await _accountRepository.AddAsClientByEmailAsync(account, cancellationToken);
-
-            throw new NotImplementedException();
         }
     }
 }
