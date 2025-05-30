@@ -1,4 +1,5 @@
-﻿using FitnessTracker.Application.Common.Interfaces.Repositories;
+﻿using FitnessTracker.Application.Common.Dtos;
+using FitnessTracker.Application.Common.Interfaces.Repositories;
 using FitnessTracker.Application.Common.Interfaces.Utilities;
 using FitnessTracker.Domain.Entities;
 using MediatR;
@@ -17,7 +18,7 @@ namespace FitnessTracker.Application.Trainer.Commands.RegisterByEmail
         string FirstName,
         string LastName,
         DateOnly DateOfBirth,
-        IEnumerable<Guid> TrainerSpecializationIds
+        IEnumerable<TrainingSpecializationListDto> TrainerSpecializations
     ) : IRequest;
 
     public class TrainerRegisterByEmailCommandHandler : IRequestHandler<TrainerRegisterByEmailCommand>
@@ -55,7 +56,7 @@ namespace FitnessTracker.Application.Trainer.Commands.RegisterByEmail
                 PersonalProfile = personalProfile
             };
 
-            await _accountRepository.AddAsTrainerByEmailAsync(account, cancellationToken);
+            await _accountRepository.AddAsTrainerByEmailAsync(account, request.TrainerSpecializations, cancellationToken);
         }
     }
 }
