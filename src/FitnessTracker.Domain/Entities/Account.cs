@@ -19,12 +19,12 @@ namespace FitnessTracker.Domain.Entities
 
         public PersonalProfile? PersonalProfile { get; set; }
 
+        public ICollection<TrainerSpecialization> TrainerSpecializations { get; set; } = new List<TrainerSpecialization>();
         public ICollection<Partnership> PartnershipsAsTrainer { get; set; } = new List<Partnership>();
         public ICollection<Partnership> PartnershipsAsClient { get; set; } = new List<Partnership>();
         public ICollection<TrainingPlan> CreatedTrainingPlans { get; set; } = new List<TrainingPlan>();
         public ICollection<TrainingPlan> AssignedTrainingPlans { get; set; } = new List<TrainingPlan>();
         public ICollection<TrainingExercise> CreatedTrainingExercises { get; set; } = new List<TrainingExercise>();
-        public ICollection<TrainingSession> CreatedTrainingSessions { get; set; } = new List<TrainingSession>();
         public ICollection<TrainingSessionLog> CreatedTrainingSessionLogs { get; set; } = new List<TrainingSessionLog>();
         public ICollection<WeightLog> CreatedWeightLogs { get; set; } = new List<WeightLog>();
         public ICollection<WeightGoal> WeightGoals { get; set; } = new List<WeightGoal>();

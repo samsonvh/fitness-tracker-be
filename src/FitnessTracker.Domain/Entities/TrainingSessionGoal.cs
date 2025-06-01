@@ -10,12 +10,15 @@ namespace FitnessTracker.Domain.Entities
     public class TrainingSessionGoal
     {
         public Guid Id { get; set; }
+        public string? Description { get; set; }
         public int? TargetReps { get; set; }
         public int? TargetSets { get; set; }
-        public float? TargetLiftingWeight { get; set; }
+        public decimal? TargetLiftingWeight { get; set; }
         public EnumTrainingSessionGoalStatus Status { get; set; }
 
+        public Guid TrainingSessionId { get; set; }
         public Guid TrainingExerciseId { get; set; }
+        public TrainingSession TrainingSession { get; set; } = null!;
         public TrainingExercise TrainingExercise { get; set; } = null!;
     }
 }

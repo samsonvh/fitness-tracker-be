@@ -11,7 +11,7 @@ namespace FitnessTracker.Domain.Entities
         public Guid Id { get; set; }
         public int? RepsCompleted { get; set; }
         public int? SetsCompleted { get; set; }
-        public float? LiftedWeight { get; set; }
+        public decimal? LiftedWeight { get; set; }
         public DateTime CreatedAt { get; set; }
 
         public Guid TrainingSessionId { get; set; }

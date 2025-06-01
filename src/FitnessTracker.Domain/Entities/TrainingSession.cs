@@ -17,6 +17,7 @@ namespace FitnessTracker.Domain.Entities
         public Guid TrainingPlanId { get; set; }
         public TrainingPlan TrainingPlan { get; set; } = null!;
 
+        public ICollection<TrainingSessionGoal> TrainingSessionGoals { get; set; } = new List<TrainingSessionGoal>();
         public ICollection<TrainingSessionLog> TrainingSessionLogs { get; set; } = new List<TrainingSessionLog>();
     }
 }

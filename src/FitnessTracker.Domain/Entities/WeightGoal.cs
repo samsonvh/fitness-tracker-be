@@ -10,7 +10,7 @@ namespace FitnessTracker.Domain.Entities
     public class WeightGoal
     {
         public Guid Id { get; set; }
-        public float TargetWeight { get; set; }
+        public decimal TargetWeight { get; set; }
         public string Unit { get; set; } = string.Empty;
         public DateTime TargetDate { get; set; }
         public EnumWeightGoalStatus Status { get; set; }

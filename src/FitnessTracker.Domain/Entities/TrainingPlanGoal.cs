@@ -11,7 +11,7 @@ namespace FitnessTracker.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Description { get; set; } = string.Empty;
-        public float? TargetWeight { get; set; }
+        public decimal? TargetWeight { get; set; }
         public EnumTrainingPlanGoalStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
 
