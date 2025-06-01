@@ -14,11 +14,11 @@ namespace FitnessTracker.Application.Client.Commands.LoginByEmail
 
     public class ClientLoginByEmailCommandHandler : IRequestHandler<ClientLoginByEmailCommand, string>
     {
-        private readonly IAccountRepository _accountRepository;
+        private readonly IAccountWriteRepository _accountRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IJwtGenerator _jwtGenerator;
 
-        public ClientLoginByEmailCommandHandler(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IJwtGenerator jwtGenerator)
+        public ClientLoginByEmailCommandHandler(IAccountWriteRepository accountRepository, IPasswordHasher passwordHasher, IJwtGenerator jwtGenerator)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;

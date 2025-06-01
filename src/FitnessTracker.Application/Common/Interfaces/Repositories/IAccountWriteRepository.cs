@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Application.Common.Interfaces.Repositories
 {
-    public interface IAccountRepository
+    public interface IAccountWriteRepository
     {
         Task<bool> IsEmailAvailableAsync(string email, CancellationToken cancellationToken);
         Task<bool> IsUsernameAvailableAsync(string username, CancellationToken cancellationToken);
+        Task<(bool IsUsernameTaken, bool isEmailTaken)> CheckAvailabilityAsync(string email, string username, CancellationToken cancellationToken);
         Task AddAsTrainerByEmailAsync(Account account, IEnumerable<TrainingSpecializationListDto> trainingSpecializations, CancellationToken cancellationToken);
         Task AddAsClientByEmailAsync(Account account, CancellationToken cancellationToken);
         Task<Account?> GetByEmailAsync(string email, CancellationToken cancellationToken);

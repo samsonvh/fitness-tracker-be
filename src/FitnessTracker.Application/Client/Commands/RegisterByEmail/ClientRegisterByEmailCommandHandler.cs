@@ -21,11 +21,11 @@ namespace FitnessTracker.Application.Client.Commands.RegisterByEmail
 
     public class ClientRegisterByEmailCommandHandler : IRequestHandler<ClientRegisterByEmailCommand>
     {
-        private readonly IAccountRepository _accountRepository;
+        private readonly IAccountWriteRepository _accountRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IGuidGenerator _guidGenerator;
 
-        public ClientRegisterByEmailCommandHandler(IAccountRepository accountRepository, IPasswordHasher passwordHasher, IGuidGenerator guidGenerator)
+        public ClientRegisterByEmailCommandHandler(IAccountWriteRepository accountRepository, IPasswordHasher passwordHasher, IGuidGenerator guidGenerator)
         {
             _accountRepository = accountRepository;
             _passwordHasher = passwordHasher;
